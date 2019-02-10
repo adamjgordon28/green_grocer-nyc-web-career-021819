@@ -53,7 +53,7 @@ def checkout(items, coupons)
   cart2 = apply_clearance(cart1)
   total = 0
   cart2.each do |name, attributes|
-    sum += attributes[:price] * attributes[:count]
+    sum += (attributes[:price]) * (attributes[:count])
   end
   if sum > 100
      sum = sum * (0.9)
