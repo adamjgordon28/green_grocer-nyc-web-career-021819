@@ -18,19 +18,33 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  cart.clone.each do |item, info|
-    info.each do |aspect, detail|
-      coupons.each do |coupon|
-        coupon.each do |key, value|
-          if item == coupon[:item]
-            cart["#{item} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[:clearance], :count => 1}
-            cart[item][:count] = cart[item][:count] - coupon[:num]
+  # code here
+  if coupons.length == 0
+    return cart
+  else
+
+    coupons.each do |coupon|
+      #index = coupon
+      #item = cart item
+      name = coupon[:item]
+      item = cart[name]
+
+      if(item != nil)
+        if(item[:count] >= coupon[:num])
+          item[:count] = item[:count] - coupon[:num]
+          coupon_name = "#{name} W/COUPON"
+          if(cart[discount_name] == nil)
+            coupon_item = {:price => index[:cost], :clearance => item[:clearance], :count => 1}
+            cart[coupon_name] = coupon_item
+          else
+            coupon_item = cart[couponkey];
+            coupon_item[:count] +=1;
           end
         end
       end
     end
-  end
-cart
+   end
+  cart
 end
 
 def apply_clearance(cart)
