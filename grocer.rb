@@ -29,10 +29,10 @@ def apply_coupons(cart, coupons)
         }
       }
       
-      if hash["#{item} W/COUPON"].nil?
-        hash.merge!(temp)
+      if cart["#{item} W/COUPON"].nil?
+        cart.merge!(new_hash)
       else
-        hash["#{item} W/COUPON"][:count] += 1
+        cart["#{item} W/COUPON"][:count] += 1
       end
       hash[item][:count] -= coupon[:num]
     end
