@@ -21,11 +21,7 @@ def apply_coupons(cart, coupons)
   cart.clone.each do |item, info|
     info.each do |aspect, detail|
       coupons.each do |coupon|
-        counter = 0
         coupon.each do |key, value|
-          if coupon[:num] == 0
-            cart 
-          end
           if item == coupon[:item]
             cart["#{item} W/COUPON"] = {:price => coupon[:cost], :clearance => true, :count => 1}
             cart[item][:count] = cart[item][:count] - coupon[:num]
@@ -35,7 +31,6 @@ def apply_coupons(cart, coupons)
     end
   end
 cart
-
 end
 
 def apply_clearance(cart)
