@@ -18,7 +18,6 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  hash = cart
   coupons.each do |coupon|
     # add coupon to cart
     item = coupon[:item]
