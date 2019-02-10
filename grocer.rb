@@ -22,7 +22,7 @@ def apply_coupons(cart, coupons)
     # add coupon to cart
     item = coupon[:item]
     if !cart[item].nil? && cart[item][:count] >= coupon[:num]
-      temp = {"#{item} W/COUPON" => {
+      new_hash = {"#{item} W/COUPON" => {
         :price => coupon[:cost],
         :clearance => hash[item][:clearance],
         :count => 1
