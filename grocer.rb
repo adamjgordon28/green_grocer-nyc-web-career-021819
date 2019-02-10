@@ -52,7 +52,7 @@ def checkout(items, coupons)
   cart1 = apply_coupons(cart, coupons)
   cart2 = apply_clearance(cart1)
   total = 0
-  cart2.each do |name, price_hash|
+  cart2.each do |name, attributes|
     sum += price_hash[:price] * price_hash[:count]
   end
   if sum > 100
