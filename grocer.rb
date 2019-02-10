@@ -27,7 +27,6 @@ def apply_coupons(cart, coupons)
         :count => 1
         }
       }
-      
       if cart["#{item} W/COUPON"].nil?
         cart.merge!(new_hash)
       else
