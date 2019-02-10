@@ -24,8 +24,6 @@ def apply_coupons(cart, coupons)
   else
 
     coupons.each do |coupon|
-      #index = coupon
-      #item = cart item
       name = coupon[:item]
       item = cart[name]
 
