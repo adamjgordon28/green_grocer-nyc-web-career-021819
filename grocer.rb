@@ -50,7 +50,7 @@ end
 def checkout(items, coupons)
   cart1 = consolidate_cart(items)
   cart2 = apply_coupons(cart1, coupons)
-  cart3 = apply_clearance(cart1)
+  cart3 = apply_clearance(cart2)
   total = 0
   cart3.each do |name, attributes|
     sum += (attributes[:price]) * (attributes[:count])
