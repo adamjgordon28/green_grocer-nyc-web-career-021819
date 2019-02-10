@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
       else
         cart["#{item} W/COUPON"][:count] += 1
       end
-      hash[item][:count] -= coupon[:num]
+      cart[item][:count] -= coupon[:num]
     end
   end
   hash
